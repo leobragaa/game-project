@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://c5eqbiwft4rlh"]
+
+[ext_resource type="Script" uid="uid://dtf4tsk3feqac" path="res://scripts/player.gd" id="1_0xhy6"]
+[ext_resource type="Texture2D" uid="uid://c0cvtc60mquap" path="res://sprites/1- Ichigo Kurosaki/04_stand.png" id="2_rairk"]
+[ext_resource type="Texture2D" uid="uid://dy0fgklp2pby5" path="res://sprites/1- Ichigo Kurosaki/05_run_dash.png" id="2_v0j0o"]
+[ext_resource type="Texture2D" uid="uid://jif5gg8qpts5" path="res://sprites/1- Ichigo Kurosaki/06_jump.png" id="3_15pad"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgh3t"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15pad"]
+atlas = ExtResource("2_rairk")
+region = Rect2(0, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xhy6"]
+atlas = ExtResource("2_rairk")
+region = Rect2(51, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sr2n"]
+atlas = ExtResource("2_rairk")
+region = Rect2(102, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of42d"]
+atlas = ExtResource("2_rairk")
+region = Rect2(153, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7f71"]
+atlas = ExtResource("3_15pad")
+region = Rect2(100, 0, 50, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldd07"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(0, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnymo"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(55, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y0dd"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(110, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apglq"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(165, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aol4h"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(220, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6py08"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(275, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dj6m"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(330, 0, 55, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jctvt"]
+atlas = ExtResource("2_v0j0o")
+region = Rect2(385, 0, 55, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgh3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15pad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sr2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of42d")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7f71")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldd07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnymo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y0dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apglq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aol4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6py08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dj6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jctvt")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=1212592956]
+script = ExtResource("1_0xhy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143808904]
+position = Vector2(0.5531082, 0.1217041)
+shape = SubResource("CapsuleShape2D_mgh3t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1351572988]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-0.44688988, -2.8782806)
+scale = Vector2(0.6099258, 0.52302635)
+sprite_frames = SubResource("SpriteFrames_mgh3t")
+animation = &"idle"
+frame_progress = 0.12519129
+speed_scale = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2012180942]
+limit_left = 0
+limit_bottom = 258
+position_smoothing_enabled = true
