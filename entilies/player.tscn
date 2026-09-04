@@ -7,7 +7,11 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mgh3t"]
 radius = 5.0
-height = 20.0
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ptmc"]
+atlas = ExtResource("3_15pad")
+region = Rect2(350, 0, 50, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15pad"]
 atlas = ExtResource("2_rairk")
@@ -63,6 +67,14 @@ region = Rect2(385, 0, 55, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mgh3t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ptmc")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_15pad")
@@ -122,7 +134,7 @@ animations = [{
 script = ExtResource("1_0xhy6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143808904]
-position = Vector2(0.5531082, 0.1217041)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_mgh3t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1351572988]
@@ -132,7 +144,6 @@ position = Vector2(-0.44688988, -2.8782806)
 scale = Vector2(0.6099258, 0.52302635)
 sprite_frames = SubResource("SpriteFrames_mgh3t")
 animation = &"idle"
-frame_progress = 0.12519129
 speed_scale = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2012180942]
